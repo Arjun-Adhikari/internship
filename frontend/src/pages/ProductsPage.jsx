@@ -26,7 +26,7 @@ const ProductsPage = () => {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/products?category=${selectedCat}&search=${searchTerm}`
+        `http://localhost:5000/api/products?category=${selectedCat}&search=${searchTerm}`,
       );
       setProducts(res.data);
     } catch (err) {
@@ -155,7 +155,7 @@ const ProductsPage = () => {
                     $899.00
                   </span>
                 </div>
-                <button 
+                <button
                   onClick={(e) => {
                     e.stopPropagation(); // Prevents card click when clicking button
                     // Add to cart logic here
@@ -199,4 +199,3 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
-
